@@ -24,7 +24,7 @@ const apolloClient = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: process.env.BACKEND_URL + '/graphql',
+      uri: process.env.BACKEND_URL,
       credentials: 'same-origin',
       fetch: fetch
     })
