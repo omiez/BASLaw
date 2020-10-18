@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "PORT=1337 strapi start",
     "dev": "strapi develop",
     "build": "strapi build",
     "strapigql": "strapi install graphql"
