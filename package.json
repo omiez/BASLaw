@@ -7,6 +7,8 @@
     "buildBackend": "npm i --prefix cms && npm run build --prefix cms",
     "buildFrontend": "npm i --prefix frontend && npm run build --prefix frontend",
     "build": "npm run buildBackend && npm run buildFrontend",
-    "start": "npm run start --prefix cms"
-  }
+    "dev": "npm run dev --prefix cms & npm run deb --prefix frontend",
+    "start": "npm run start  --prefix cms"
+  },
+  "cacheDirectories": ["frontend/node_modules", "cms/node_modules"]
 }

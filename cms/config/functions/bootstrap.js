@@ -10,4 +10,7 @@
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
  */
 
-module.exports = () => {};
+module.exports = async () => {
+	  const fs = require('fs');
+      fs.closeSync(fs.openSync('/tmp/app-initialized', 'w'));
+};

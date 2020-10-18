@@ -27,18 +27,69 @@ http {
   # Must read the body in 5 seconds.
   client_body_timeout <%= ENV['NGINX_CLIENT_BODY_TIMEOUT'] || 5 %>;
 
+  # handle SNI
+    # proxy_ssl_server_name on;
+    # resolver needs to be set because we're using dynamic proxy_pass
+    # resolver 8.8.8.8;
+
+  upstream app_server {
+    server unix:/tmp/nginx.socket fail_timeout=0;
+  }
+    
   server {
     listen <%= ENV["PORT"] %>;
-    server_name cms;
+    port_in_redirect off;
+    server_name peaceful-savannah-05454.herokuapp.com;
     keepalive_timeout 5;
     client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
-
-    location /api {
-
-      proxy_pass http://127.0.0.1:1337/graphql;
-
+    absolute_redirect on;
+    server_name_in_redirect off;
+    proxy_redirect off;
+    
+    
+    location / {
+      root /app/frontend/.vuepress/dist; # path to your app
+      try_files $uri $uri/ /index.html;
     }
 
-    root /frontend/.vuepress/dist; # path to your app
+    # Strapi API
+    location /api {
+      rewrite ^/api/(.*)$ /$1 break; 
+      proxy_http_version 1.1;
+      proxy_set_header X-Forwarded-Host $host;
+      proxy_set_header X-Forwarded-Server $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_set_header Host $http_host;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "Upgrade";
+      proxy_pass_request_headers on;
+      proxy_redirect off;
+      proxy_pass http://app_server/api;
+    }
+
+    location @fallback {        
+        root /app/cms/build;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /admin {
+      proxy_http_version 1.1;
+      proxy_set_header X-Forwarded-Host $host;
+      proxy_set_header X-Forwarded-Server $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_set_header Host $http_host;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "Upgrade";
+      proxy_pass_request_headers on;
+      proxy_redirect off;
+      proxy_pass http://app_server;
+      proxy_intercept_errors on;
+      error_page 400 = @fallback;
+      error_page 404 = @fallback;
+    }
   }
 }

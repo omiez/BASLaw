@@ -1,2 +1,1 @@
-web: bin/start-nginx-solo
-worker: npm start
+web: bin/start-nginx npm start

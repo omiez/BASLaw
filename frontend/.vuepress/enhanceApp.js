@@ -1,8 +1,9 @@
 // import Vuetify from 'vuetify'
-// import '../node_modules/vuetify/dist/vuetify.css'
+// import 'vuetify/dist/vuetify.min.css'
+// Helpers
+// import colors from 'vuetify/es5/util/colors'
+
 import VueFormulate from '@braid/vue-formulate'
-// scss/main.scss
-import '../node_modules/@braid/vue-formulate/themes/snow/snow.scss';
 
 import AsyncComputed from 'vue-async-computed'
 
@@ -24,7 +25,7 @@ const apolloClient = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: process.env.BACKEND_URL,
+      uri: process.env.BACKEND_URL + '/graphql',
       credentials: 'same-origin',
       fetch: fetch
     })
@@ -48,7 +49,13 @@ export default ({
   isServer // is this enhancement applied in server-rendering or client
 }) => {
   // ...apply enhancements to the app
-  // Vue.use(Vuetify)
+  // Vue.use(Vuetify, {
+  //   theme: {
+  //     primary: colors.red.darken1, // #E53935
+  //     secondary: colors.red.lighten4, // #FFCDD2
+  //     accent: colors.indigo.base // #3F51B5
+  //   }
+  // });
   Vue.use(VueFormulate, {
     library: {
       cityAutocomplete: {
@@ -56,9 +63,10 @@ export default ({
         component: 'cityAutocomplete'
       }
     }
-  })
+  });
   Vue.use(AsyncComputed);
   Vue.use(VueApollo);
   options.apolloProvider = apolloProvider;
   // options.vuetify = new Vuetify({});
+  router.mode = 'history';
 }
