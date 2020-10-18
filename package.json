@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "description": "A Strapi+Vuepress application",
   "scripts": {
-    "buildBackend": "npm run build --prefix cms",
-    "buildFrontend": "npm run build --prefix frontend",
+    "buildBackend": "npm i --prefix cms && npm run build --prefix cms",
+    "buildFrontend": "npm i --prefix frontend && npm run build --prefix frontend",
     "build": "npm run buildBackend && npm run buildFrontend",
     "start": "npm run start --prefix cms"
   }
