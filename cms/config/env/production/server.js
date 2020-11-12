@@ -1,9 +1,9 @@
 module.exports = ({ env }) => ({
-  host: '127.0.0.1',
+  host: 'localhost',
   socket: '/tmp/nginx.socket',
-  url:  '/api',
+  url: '/api',
   admin: {
-    url:  'http://127.0.0.1:' + env.int('PORT', 1337) + '/admin',
+    url: 'http://localhost/admin',
     autoOpen: false,
     auth: {
       secret: env('ADMIN_JWT_SECRET', '19fce41b872056b32f6752ebf50d1515'),
