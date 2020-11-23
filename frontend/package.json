@@ -9,7 +9,7 @@
   },
   "repository": "/objectivie",
   "scripts": {
-    "deb": "npm run dev --first=http://localhost:1337",
+    "deb": "npm run dev --first=http://localhost:1337/graphql",
     "dev": "BACKEND_URL=$npm_config_first vuepress dev",
     "build": "vuepress build"
   },
@@ -18,7 +18,6 @@
   "dependencies": {
     "@apollo/client": "^3.2.5",
     "@braid/vue-formulate": "^2.4.3",
-    "@vuepress/theme-blog": "^2.1.0",
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
