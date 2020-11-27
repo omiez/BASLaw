@@ -3,6 +3,8 @@
 // Helpers
 // import colors from 'vuetify/es5/util/colors'
 
+import './styles/fonts.css'
+
 import VueFormulate from '@braid/vue-formulate'
 
 import AsyncComputed from 'vue-async-computed'

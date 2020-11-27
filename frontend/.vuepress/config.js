@@ -40,7 +40,7 @@ module.exports = {
   },
   theme:'reco',
   themeConfig: {
-    type: 'MyHome',
+    type: 'blog',
     noFoundPageByTencent: false,
     // sidebar: [
     //   ['/contact/', 'Contact']

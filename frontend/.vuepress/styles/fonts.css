@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Thin'), local('AbrahamTRIAL-Thin'),
+        url('../fonts/AbrahamTRIAL-Thin.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Regular'), local('AbrahamTRIAL-Regular'),
+        url('../fonts/AbrahamTRIAL-Regular.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Light'), local('AbrahamTRIAL-Light'),
+        url('../fonts/AbrahamTRIAL-Light.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Medium'), local('AbrahamTRIAL-Medium'),
+        url('../fonts/AbrahamTRIAL-Medium.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Black'), local('AbrahamTRIAL-Black'),
+        url('../fonts/AbrahamTRIAL-Black.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abraham';
+    src: local('Abraham Bold'), local('AbrahamTRIAL-Bold'),
+        url('../fonts/AbrahamTRIAL-Bold.woff2') format('woff2'),
+        url('../fonts/AbrahamTRIAL-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
