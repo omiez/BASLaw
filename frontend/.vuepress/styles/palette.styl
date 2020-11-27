@@ -9,6 +9,12 @@ body
     text-align right !important
     font-family $baseFont !important
 
+.personal-info-wrapper .personal-img
+    width 12rem !important
+    height 8rem !important
+    border-radius 0 !important
+    margin: 1rem auto 1rem !important
+
 .navbar
     .logo
         margin-left 0.8rem !important
@@ -25,6 +31,32 @@ body
         margin-right 1.5rem
     .nav-item:first-child
         margin-right 0
+    .nav-item:last-child
+        display none
+    .sidebar-button
+        right 1rem
+        left auto
+
+@media (max-width: 719px)
+    .navbar
+        padding-left 0 !important
+        padding-right 4rem
+
+.sidebar-open
+    transform none
+
+.sidebar
+    right 0
+    left auto
+    transform translateX(100%);
+    border-left 1px solid var(--border-color)
+    border-right none
+    .nav-links .nav-item, .nav-links .repo-link
+        padding 0.5rem 1.5rem 0.5rem 0
+    .num
+        display none !important
+    .nav-item:last-child
+        display none
 
 .color-picker-menu
     text-align left
@@ -55,12 +87,16 @@ body
     div[class*="language-"]
             direction ltr !important
 
-.home-blog
-    .home-blog-wrapper
-        .info-wrapper
-            margin-right 15px
-            margin-left 0
+.home-blog .home-blog-wrapper .info-wrapper
+    margin-right 15px
+    margin-left 0
 
+@media (max-width: 719px)
+    .home-blog .home-blog-wrapper .info-wrapper
+        margin-right 0
+    .blog-list
+        margin: 0 auto 20px;
+    
 .personal-info-wrapper .num > div[data-v-50777274]:first-child
     border-left 1px solid #333
     border-right none
@@ -82,4 +118,6 @@ h2::before
     border-right 5px solid #1e4042
     border-left none !important
 
-
+.categories-wrapper .category-wrapper .category-item a .post-num
+    margin-right 4px !important
+    margin-left 0 !important

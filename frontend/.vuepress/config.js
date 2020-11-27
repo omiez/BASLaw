@@ -8,21 +8,6 @@ module.exports = {
         // ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'}],
         ['script', { type: 'text/javascript', src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBK-gnbwSx5IOZkx6BfbL7uniHqENz8F68&libraries=places'}]
     ],
-    // plugins: [
-    //   '@vuepress/blog',
-    //   {
-    //     directories: [
-    //       {
-    //         // Unique ID of current classification
-    //         id: 'post',
-    //         // Target directory
-    //         dirname: '_posts',
-    //         // Path of the `entry page` (or `list page`)
-    //         path: '/',
-    //       },
-    //     ],
-    //   },
-    // ],
   // plugins: ['@vuepress/active-header-links'],
   configureWebpack: (config) => { 
   	return {
@@ -39,17 +24,23 @@ module.exports = {
     }
   },
   theme:'reco',
+  locales: {
+    '/': {
+      lang: 'עברית'
+    },
+    '/en/': {
+      lang: 'English'
+    }
+  },
   themeConfig: {
+    authorAvatar: '/logo-big.svg',
     type: 'blog',
+    mode: 'light', 
+    modePicker: false,
     noFoundPageByTencent: false,
     // sidebar: [
     //   ['/contact/', 'Contact']
     // ],
-    nav: [
-      { text: 'בית', link: '/' },
-      { text: 'צור קשר', link: '/contact/' },
-      { text: 'פרסומים', link: '/tag/' }
-    ],
     logo: '/logo.svg',
          // Blog configuration
     blogConfig: {
@@ -57,9 +48,56 @@ module.exports = {
         location: 2,     // The position occupied in the navigation bar menu, default to 2
         text: 'תחומי עיסוק' // Text default to "Category"
       },
-      tags: {
+      tag: {
         location: 3,     // The position occupied in the navigation bar menu, default to 3
-        text: 'Tag'      // Text default to "Tag"
+        text: 'פרסומים'      // Text default to "Tag"
+      }
+    },
+
+    locales: {
+      '/': {
+        nav: [
+          { text: 'תחומי עיסוק', link: '/categories/category1/' },
+          { text: 'פרסומים', link: '/tag/' },
+          { text: 'ניוזלטר', link: '/newsletter/' },
+          { text: 'צור קשר', link: '/contact/' },
+          { text: 'English', link: '/en/' },
+        ],
+        recoLocales: {
+          homeBlog: {
+            article: 'כתבות',
+            tag: 'תגיות',
+            category: 'תחומים'
+          },
+          pagation: {
+            prev: 'הקודם',
+            next: 'הבא',
+            go: 'צא לדרך',
+            jump: 'קפוץ אל'
+          }
+        }
+      },
+      '/en/': {
+        nav: [
+          { text: 'Legal Practices', link: '/categories/category1/' },
+          { text: 'Press', link: '/tag/' },
+          { text: 'Newsletter', link: '/en/newsletter/' },
+          { text: 'Contact', link: '/en/contact/' },
+          { text: 'עברית', link: '/' },
+        ],
+        recoLocales: {
+          homeBlog: {
+            article: 'Article',
+            tag: 'Tag',
+            category: 'Category'
+          },
+          pagation: {
+            prev: 'Prev',
+            next: 'Next',
+            go: 'Go',
+            jump: 'Jump To'
+          }
+        }
       }
     }
   }
