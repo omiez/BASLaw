@@ -57,6 +57,7 @@ module.exports = {
     locales: {
       '/': {
         nav: [
+          { text: 'הצוות', link: '/attorneys/' },
           { text: 'תחומי עיסוק', link: '/categories/category1/' },
           { text: 'פרסומים', link: '/tag/' },
           { text: 'ניוזלטר', link: '/newsletter/' },
@@ -79,6 +80,7 @@ module.exports = {
       },
       '/en/': {
         nav: [
+          { text: 'Attorneys', link: '/attorneys/' },
           { text: 'Legal Practices', link: '/categories/category1/' },
           { text: 'Press', link: '/tag/' },
           { text: 'Newsletter', link: '/en/newsletter/' },
