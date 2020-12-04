@@ -17,7 +17,7 @@
     },
     "Summary": {
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "Photo": {
       "collection": "file",
@@ -35,7 +35,7 @@
       "enum": [
         "namepartner",
         "partner",
-        "associates"
+        "associate"
       ]
     }
   }

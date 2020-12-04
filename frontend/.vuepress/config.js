@@ -58,7 +58,7 @@ module.exports = {
       '/': {
         nav: [
           { text: 'הצוות', link: '/attorneys/' },
-          { text: 'תחומי עיסוק', link: '/categories/category1/' },
+          { text: 'תחומי עיסוק', link: '/categories/commercial/' },
           { text: 'פרסומים', link: '/tag/' },
           { text: 'ניוזלטר', link: '/newsletter/' },
           { text: 'צור קשר', link: '/contact/' },

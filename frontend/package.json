@@ -18,6 +18,8 @@
   "dependencies": {
     "@apollo/client": "^3.2.5",
     "@braid/vue-formulate": "^2.4.3",
+    "@vuepress/plugin-active-header-links": "^1.7.1",
+    "@vuepress/plugin-nprogress": "^1.7.1",
     "enhanced-resolve": "^5.3.2",
     "graphql": "^15.3.0",
     "node-fetch": "^2.6.1",
