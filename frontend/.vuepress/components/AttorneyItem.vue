@@ -1,13 +1,14 @@
 <template>
   <div
     class="abstract-item"
-    @click="$router.push(item.path)">
-    
+    >
+    <div>{{item.Title}}</div>
     <div class="title">
-      <router-link :to="item.path">{{item.title}}</router-link>
+      <!-- <router-link>{{item.title}}</router-link> -->
+      {{item.Name}}
     </div>
-    <div class="abstract" v-html="item.excerpt"></div>
-    <img :src="item.img">
+    <img :src="'http://localhost:1337' + item.Photo[0].url"/>
+    <div class="abstract" v-html="item.Summary"></div>
   </div>
 </template>
 

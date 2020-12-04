@@ -5,8 +5,8 @@
       <AttorneyItem
         v-show="recoShowModule"
         class="list"
-        v-for="(item) in posts"
-        :key="item.path"
+        v-for="(item) in attorneys"
+        :key="item.name"
         :item="item"
         :currentPage="currentPage"
         :currentTag="currentTag"></AttorneyItem>
@@ -21,17 +21,37 @@ import AttorneyItem from './AttorneyItem'
 import pagination from '@theme/mixins/pagination'
 import ModuleTransition from '@theme/components/ModuleTransition'
 import moduleTransitonMixin from '@theme/mixins/moduleTransiton'
+import gql from 'graphql-tag';
 
 export default {
   mixins: [pagination, moduleTransitonMixin],
   components: { Common, TagList, ModuleTransition },
+
   data () {
     return {
       tags: [],
       currentTag: '',
       currentPage: 1,
       allTagName: '',
+      attorneys : []
     }
+  },
+
+  apollo: {
+    // Simple query that will update the page content
+      attorneys: {
+        query: gql`query {
+            attorneys {
+              Title
+              Name
+              Summary
+              Photo(limit:1) {
+                url
+              }
+            }
+        }`,
+        prefetch: false
+      }
   },
 
   created () {
