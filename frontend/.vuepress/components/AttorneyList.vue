@@ -1,6 +1,8 @@
 <template>
   <!-- 博客列表 -->
   <ModuleTransition delay="0.08">
+    <div>
+      <h3 class="pagetitle">הצוות שלנו:</h3>
     <div  class="attorneys-wrapper">
       <AttorneyItem
         v-show="recoShowModule"
@@ -10,6 +12,7 @@
         :item="item"
         :currentPage="currentPage"
         :currentTag="currentTag"></AttorneyItem>
+    </div>
     </div>
   </ModuleTransition>
 </template>
@@ -153,4 +156,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+.pagetitle
+  text-align center
 </style>

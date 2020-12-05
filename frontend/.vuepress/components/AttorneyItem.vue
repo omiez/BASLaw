@@ -2,12 +2,12 @@
   <div
     class="abstract-item"
     >
-    <div>{{item.Title}}</div>
+    <div>{{getTitleName(item.Title)}}</div>
     <div class="title">
       <!-- <router-link>{{item.title}}</router-link> -->
-      {{item.Name}}
+      <span>עו״ד</span> {{item.Name}}
     </div>
-    <img :src="'http://localhost:1337' + item.Photo[0].url"/>
+    <img v-if="item.Photo[0]" :src="'http://localhost:1337' + item.Photo[0].url"/>
     <div class="abstract" v-html="item.Summary"></div>
   </div>
 </template>
@@ -16,7 +16,19 @@
 import PageInfo from '@theme/components/PageInfo'
 export default {
   components: { PageInfo },
-  props: ['item', 'currentPage', 'currentTag']
+  props: ['item', 'currentPage', 'currentTag'],
+  methods: {
+        getTitleName(title) {
+      switch (title) {
+        case "namepartner":
+          return 'שותפה מייסדת';
+        case "partner":
+          return 'שותפה';
+        default:
+          return '';   
+      }
+    }
+  }
 }
 </script>
 

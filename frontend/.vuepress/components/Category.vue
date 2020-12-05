@@ -1,6 +1,6 @@
 <template>
   <Common class="categories-wrapper" :sidebar="false">
-
+    <h3>תחומיי עיסוק:</h3>
         <ModuleTransition>
       <ul v-show="recoShowModule" class="category-wrapper">
         <li
@@ -9,7 +9,7 @@
           v-for="(item, index) in this.$categories.list"
           :key="index">
           <router-link :to="item.path">
-            <span class="category-name">{{ item.name }}</span>
+            <span class="category-name">{{ getCategoryName(item.name) }}</span>
             <!-- <span class="post-num" :style="{ 'backgroundColor': getOneColor() }">{{ item.pages.length }}</span> -->
           </router-link>
         </li>
@@ -147,7 +147,21 @@ export default {
       this.$page.currentPage = page
       this._setStoragePage(page)
     },
-    getOneColor
+    getOneColor,
+    getCategoryName(category) {
+      switch (category) {
+        case "commercial":
+          return 'דיני תאגידים ומשפט מסחרי';
+        case "letegation":
+          return 'ליטיגציה';
+        case "labour":
+          return 'דיני עבודה';
+        case "realestate":
+          return 'נדל"ן';
+        case "hightech":
+          return 'חברות סטארט-אפ וחברות היי-טק';     
+      }
+    }
   },
 
   watch: {
