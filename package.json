@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "description": "A Strapi+Vuepress application",
   "scripts": {
-    "buildBackend": "npm i --prefix cms && npm run build --prefix cms",
     "buildFrontend": "npm i --prefix frontend && npm run build --prefix frontend",
-    "build": "npm run buildBackend && npm run buildFrontend",
+    "buildBackend": "npm i --prefix cms && npm run build --prefix cms && cp -a cms/public/. frontend/.vuepress/dist",
+    "build": "npm run buildFrontend && npm run buildBackend",
     "dev": "npm run dev --prefix cms & npm run deb --prefix frontend",
     "start": "npm run start  --prefix cms"
   },

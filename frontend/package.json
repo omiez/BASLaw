@@ -9,7 +9,7 @@
   },
   "repository": "/objectivie",
   "scripts": {
-    "deb": "npm run dev --first=http://localhost:1337/graphql",
+    "deb": "npm run dev --first=http://localhost:1337",
     "dev": "BACKEND_URL=$npm_config_first vuepress dev",
     "build": "vuepress build"
   },

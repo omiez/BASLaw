@@ -65,43 +65,6 @@ export default {
     }
   },
 
-  computed: {
-    // 时间降序后的博客列表
-    posts () {
-      let posts = [
-        {
-          path:'maya',
-          title: 'Maya Azriel',
-          img:'/img/maazriel.jpg',
-          frontmatter: {},
-          excerpt: 'מאיה היא עורכת דין נפלאה'
-        },
-        {
-          path:'maya2',
-          title: 'Maya Azriel',
-          img:'/img/maazriel.jpg',
-          frontmatter: {},
-          excerpt: 'מאיה היא עורכת דין נפלאה'
-        },
-        {
-          path:'maya3',
-          title: 'Maya Azriel',
-          img:'/img/maazriel.jpg',
-          frontmatter: {},
-          excerpt: 'מאיה היא עורכת דין נפלאה'
-        },
-        {
-          path:'maya4',
-          title: 'Maya Azriel',
-          img:'/img/maazriel.jpg',
-          frontmatter: {},
-          excerpt: 'מאיה היא עורכת דין נפלאה'
-        }
-      ]
-      return posts
-    }
-  },
-
   mounted () {
     this._setPage(this._getStoragePage())
   },

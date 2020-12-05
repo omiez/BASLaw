@@ -74,12 +74,15 @@
 
     <!-- 博客列表 -->
     <ModuleTransition delay="0.08">
-      <note-abstract
+      <div>
+            <h3>מהתקשורת:</h3>
+            <note-abstract
         v-show="recoShowModule"
         class="list"
         :data="posts"
         :currentPage="currentPage"
         @currentTag="getCurrentTag"></note-abstract>
+        </div>
     </ModuleTransition>
 
     <!-- 分页 -->

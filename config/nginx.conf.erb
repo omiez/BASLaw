@@ -45,11 +45,14 @@ http {
     absolute_redirect on;
     server_name_in_redirect off;
     proxy_redirect off;
-    
-    
-    location / {
-      root /app/frontend/.vuepress/dist; # path to your app
-      try_files $uri $uri/ /index.html;
+    root /app/frontend/.vuepress/dist; # path to your app
+
+    location /api/uploads/ {
+      alias /app/cms/public/uploads/; # path to your app
+    }
+
+    location /uploads/ {
+      alias /app/cms/public/uploads/; # path to your app
     }
 
     # Strapi API

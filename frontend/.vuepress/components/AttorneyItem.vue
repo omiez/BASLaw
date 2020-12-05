@@ -7,7 +7,7 @@
       <!-- <router-link>{{item.title}}</router-link> -->
       <span>עו״ד</span> {{item.Name}}
     </div>
-    <img v-if="item.Photo[0]" :src="'http://localhost:1337' + item.Photo[0].url"/>
+    <img v-if="item.Photo[0]" :src="baseUrl + item.Photo[0].url"/>
     <div class="abstract" v-html="item.Summary"></div>
   </div>
 </template>
@@ -28,7 +28,13 @@ export default {
           return '';   
       }
     }
-  }
+  },
+  computed: {
+    // 时间降序后的博客列表
+    baseUrl () {
+      return process.env.BACKEND_URL || '';
+    }
+  },
 }
 </script>
 

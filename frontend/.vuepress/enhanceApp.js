@@ -15,6 +15,8 @@ import { onError } from "@apollo/client/link/error";
 
 import fetch from 'node-fetch';
 
+const GRAPHQL_PATH = '/graphql';
+
 const apolloClient = new ApolloClient({
   link: ApolloLink.from([
     onError(({ graphQLErrors, networkError }) => {
@@ -27,7 +29,7 @@ const apolloClient = new ApolloClient({
       if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
-      uri: process.env.BACKEND_URL,
+      uri: (process.env.BACKEND_URL || '/api') + GRAPHQL_PATH,
       credentials: 'same-origin',
       fetch: fetch
     })
