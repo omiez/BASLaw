@@ -4,8 +4,7 @@
     >
     <div>{{getTitleName(item.Title)}}</div>
     <div class="title">
-      <router-link :to="{ path: '/attorney/', query: { id: item.id }}">{{item.Title}}</router-link>
-      <span>עו״ד</span> {{item.Name}}
+      <span>עו״ד</span> <router-link :to="{ path: '/attorney/', query: { id: item.id }}">{{item.Title}}</router-link>
     </div>
     <img v-if="item.Photo[0]" :src="baseUrl + item.Photo[0].url"/>
     <div class="abstract" v-html="item.Summary"></div>
