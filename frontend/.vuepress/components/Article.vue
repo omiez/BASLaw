@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="title">{{article.Title ? article.Title : null}}</h1>
-    <img v-if="article.Image[0]" :src="baseUrl + article.Image[0].url"/>
-    <div class="abstract" v-html="article.Content"></div>
+    <h1 class="title">{{article ? article.Title : null}}</h1>
+    <img v-if="article" :src="baseUrl + article.Image[0].url"/>
+    <div v-if="article"  class="abstract" v-html="article.Content"></div>
   </div>
 </template>
 
