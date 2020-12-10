@@ -13,8 +13,5 @@
   "cacheDirectories": [
     "frontend/node_modules",
     "cms/node_modules"
-  ],
-  "dependencies": {
-    "@vuepress/plugin-nprogress": "^1.7.1"
-  }
+  ]
 }
