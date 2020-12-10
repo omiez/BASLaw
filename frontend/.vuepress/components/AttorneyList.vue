@@ -45,6 +45,7 @@ export default {
       attorneys: {
         query: gql`query {
             attorneys {
+              id
               Title
               Name
               Summary

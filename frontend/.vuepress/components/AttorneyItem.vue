@@ -4,7 +4,7 @@
     >
     <div>{{getTitleName(item.Title)}}</div>
     <div class="title">
-      <!-- <router-link>{{item.title}}</router-link> -->
+      <router-link :to="{ path: '/attorney/', query: { id: item.id }}">{{item.Title}}</router-link>
       <span>עו״ד</span> {{item.Name}}
     </div>
     <img v-if="item.Photo[0]" :src="baseUrl + item.Photo[0].url"/>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import PageInfo from '@theme/components/PageInfo'
+// import PageInfo from '@theme/components/PageInfo'
 export default {
-  components: { PageInfo },
+  // components: { PageInfo },
   props: ['item', 'currentPage', 'currentTag'],
   methods: {
         getTitleName(title) {
