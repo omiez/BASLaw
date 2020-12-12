@@ -11,3 +11,4 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 <ContentDynamic/>
 <h3> על מנת שנוכל להפיק עבורך את הדו”ח המפורט עליך למלא מספר נתונים</h3>
 <dataForm/>
+<AccessibilityToolbar></AccessibilityToolbar>
