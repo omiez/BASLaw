@@ -1,1 +1,6 @@
+---
+ sidebar: auto
+---
+
+
 <AttorneyList/>

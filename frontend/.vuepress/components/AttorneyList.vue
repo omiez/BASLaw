@@ -2,7 +2,7 @@
   <!-- 博客列表 -->
   <ModuleTransition delay="0.08">
     <div>
-      <h3 class="pagetitle">הצוות שלנו:</h3>
+      <h1 style="margin-top: -22px;">הצוות שלנו</h1>
     <div  class="attorneys-wrapper">
       <AttorneyItem
         v-show="recoShowModule"
@@ -122,4 +122,10 @@ export default {
   justify-content: space-between;
 .pagetitle
   text-align center
+
+h1
+    color: #31799a;
+    display: inherit;
+    text-align: center;
+    font-size: 2.6rem;
 </style>

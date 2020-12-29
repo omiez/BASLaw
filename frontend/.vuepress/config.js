@@ -8,7 +8,8 @@ module.exports = {
         // ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'}],
         ['script', { type: 'text/javascript', src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBK-gnbwSx5IOZkx6BfbL7uniHqENz8F68&libraries=places'}]
     ],
-  // plugins: [
+    // plugins: ['@vuepress/active-header-links'],
+  plugins: [
   //     [
   //     'register-components',
   //     {
@@ -19,8 +20,8 @@ module.exports = {
   //         }
   //       ]
   //     }
-  //   ]
-  // ],
+  //     ],
+  ],
   configureWebpack: (config) => { 
   	return {
 
@@ -30,6 +31,22 @@ module.exports = {
         new webpack.NormalModuleReplacementPlugin(
          /\@theme\/components\/Navbar/,
          path.resolve(__dirname, './components/Navbar.vue')
+        ),
+        new webpack.NormalModuleReplacementPlugin(
+         /\@theme\/components\/Footer/,
+         path.resolve(__dirname, './components/Footer.vue')
+        ),
+        new webpack.NormalModuleReplacementPlugin(
+         /\@theme\/components\/Sidebar/,
+         path.resolve(__dirname, './components/Sidebar.vue')
+        ),
+        new webpack.NormalModuleReplacementPlugin(
+         /\@theme\/components\/Page/,
+         path.resolve(__dirname, './components/Page.vue')
+        ),
+        new webpack.NormalModuleReplacementPlugin(
+         /\@theme\/helpers\/utils/,
+         path.resolve(__dirname, './helpers/utils.js')
         )
   		],
 
@@ -46,13 +63,15 @@ module.exports = {
   },
   themeConfig: {
     authorAvatar: '/logo-big.svg',
-    type: 'blog',
+    type: 'BASHome',
     mode: 'light', 
     modePicker: false,
     noFoundPageByTencent: false,
-    // sidebar: [
-    //   ['/contact/', 'Contact']
-    // ],
+    sidebar: [
+      ['/' ,'home'],
+      ['/attorneys/', 'הצוות'],
+      ['/contact/', 'צורו קשר']
+    ],
     logo: '/logo.svg',
          // Blog configuration
     blogConfig: {

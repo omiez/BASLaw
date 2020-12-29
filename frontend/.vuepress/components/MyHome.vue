@@ -3,10 +3,11 @@
     <div class="hero">
       <ModuleTransition>
         <img
-          v-if="recoShowModule && $frontmatter.heroImage"
+          v-if="home && recoShowModule && $frontmatter.heroImage"
           :style="heroImageStyle || {}"
-          :src="$withBase($frontmatter.heroImage)"
+          :src="baseUrl + home.cover.url"
           alt="hero">
+          <!-- :src="$withBase($frontmatter.heroImage)" -->
       </ModuleTransition>
       <ModuleTransition delay="0.04">
         <h1 v-if="recoShowModule && $frontmatter.heroText !== null">{{ $frontmatter.heroText || $title || 'vuePress-theme-reco' }}</h1>
@@ -41,11 +42,30 @@
 import NavLink from '@theme/components/NavLink'
 import ModuleTransition from '@theme/components/ModuleTransition'
 import moduleTransitonMixin from '@theme/mixins/moduleTransiton'
+import gql from 'graphql-tag';
 
 export default {
   mixins: [moduleTransitonMixin],
   components: { NavLink, ModuleTransition },
+  apollo: {
+  // Simple query that will update the page content
+    home: {
+      query: gql`query home {
+        home {
+          caption
+          cover {
+            url
+          }
+        }
+      }`,
+      prefetch: false
+    }
+  },
   computed: {
+
+    baseUrl () {
+      return process.env.BACKEND_URL || '';
+    },
 
     actionLink () {
       return {

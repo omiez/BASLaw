@@ -1,13 +1,30 @@
-$accentColor = #1E4042
+$accentColor = #31799A
 //TODO: $accentDarkColor
 $baseFont = 'Abraham', 'Roboto', Arial
 @import "_snowoverride"
 $navbar-horizontal-padding = 1.5rem
+//--text-color = #000000
 
 body
     direction rtl !important
     text-align right !important
     font-family $baseFont !important
+
+.page
+    margin-left 0 !important
+    margin-right 18rem !important
+
+@media (min-width: 720px)
+    .theme-container.no-sidebar .page, .theme-container.no-sidebar .password-wrapper-in
+        margin-right 0 !important
+
+@media (max-width: 719px)
+    .page, .password-wrapper-in 
+        margin-right 0 !important
+
+@media (max-width: 959px)
+    .page, .password-wrapper-in
+        margin-right 14.76rem !important
 
 .personal-info-wrapper .personal-img
     width 12rem !important
@@ -48,7 +65,7 @@ body
 .sidebar
     right 0
     left auto
-    transform translateX(100%);
+    transform translateX(0);
     border-left 1px solid var(--border-color)
     border-right none
     .nav-links .nav-item, .nav-links .repo-link
@@ -115,9 +132,13 @@ h2::before
     display block
     height 1.8rem
     content ''
-    border-right 5px solid #1e4042
+    border-right 5px solid #31799A
     border-left none !important
 
 .categories-wrapper .category-wrapper .category-item a .post-num
     margin-right 4px !important
     margin-left 0 !important
+
+.tags
+   padding 30px 0 !important
+   margin 0

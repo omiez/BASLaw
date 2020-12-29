@@ -85,14 +85,14 @@ export default {
         this.resetHighlightLinks()
         this.resetGrayscale()
         this.accessibilityStates[state] ?
-          document.body.classList.add("accessibility-contrast") :
-          document.body.classList.remove("accessibility-contrast")
+          document.documentElement.classList.add("accessibility-contrast") :
+          document.documentElement.classList.remove("accessibility-contrast")
       } else if (state === "greyscaled") {
         this.resetHighlightLinks()
         this.resetInvertContrast()
         this.accessibilityStates[state] ?
-          document.body.classList.add("accessibility-greyscale") :
-          document.body.classList.remove("accessibility-greyscale")
+          document.documentElement.classList.add("accessibility-greyscale") :
+          document.documentElement.classList.remove("accessibility-greyscale")
       } else if (state === "highlighted") {
         this.resetGrayscale()
         this.resetInvertContrast()
@@ -236,7 +236,7 @@ export default {
   }
   .accessibility-menu-item {
     border-radius: 100px;
-    border: 2px solid #1e4042;
+    border: 2px solid #31799A;
     text-align: center;
     float: right;
     width: 50px;
@@ -250,11 +250,11 @@ export default {
   }
 
   .accessibility-menu-item:hover {
-    background: #1e4042;
+    background: #31799A;
   }
 
   .active {
-    background-color: #1e4042;
+    background-color: #31799A;
   }
 </style>
 
@@ -300,7 +300,7 @@ export default {
     display: block;
     width: 56px;
     height: 56px;
-    background-color: #1e4042;
+    background-color: #31799A;
     border-radius: 50%;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   }

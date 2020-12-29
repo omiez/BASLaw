@@ -1,22 +1,16 @@
 {
   "kind": "singleType",
-  "collectionName": "page_contents",
+  "collectionName": "homes",
   "info": {
-    "name": "pageContent",
+    "name": "Home",
     "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
-    "content": {
-      "type": "richtext"
-    },
-    "title": {
-      "type": "string"
-    },
     "cover": {
       "model": "file",
       "via": "related",
@@ -27,6 +21,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "caption": {
+      "type": "string"
     }
   }
 }

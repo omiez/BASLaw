@@ -6,9 +6,15 @@ tagline: האם אתה משלם מאות שקלים בחודש ולא זוכר �
 actionText: הראו לי כיצד
 actionLink: /guide/
 footer: MIT Licensed | Copyright © 2018-present Evan You
+heroImageStyle: {
+  width: '100% !important',
+  max-width: 'none !important',
+  margin-top: '26vh',
+  height: '92vh',
+  margin-bottom: '0'
+}
 ---
 
-<ContentDynamic/>
-<h3> על מנת שנוכל להפיק עבורך את הדו”ח המפורט עליך למלא מספר נתונים</h3>
-<dataForm/>
-<AccessibilityToolbar></AccessibilityToolbar>
+<!-- <ContentDynamic/> -->
+<!-- <h3> על מנת שנוכל להפיק עבורך את הדו”ח המפורט עליך למלא מספר נתונים</h3> -->
+<!-- <dataForm/> -->

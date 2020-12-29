@@ -1,6 +1,6 @@
 <template>
-  <Common class="categories-wrapper" :sidebar="false">
-    <h3>תחומיי עיסוק:</h3>
+  <Common class="categories-wrapper" >
+    <h1>תחומיי עיסוק</h1>
         <ModuleTransition>
       <ul v-show="recoShowModule" class="category-wrapper">
         <li
@@ -185,7 +185,7 @@ export default {
   padding: 4.6rem 2.5rem 0;
   .category-wrapper {
     list-style none
-    padding-left 0
+    padding-inline-start: 0;
     .category-item {
       vertical-align: middle;
       margin: 4px 8px 10px;
@@ -238,4 +238,11 @@ export default {
       font-size .8em
       float none
       text-align left
+
+h1 {
+    color: #31799a;
+    display: inherit;
+    text-align: center;
+    font-size: 2.6rem;
+}
 </style>
