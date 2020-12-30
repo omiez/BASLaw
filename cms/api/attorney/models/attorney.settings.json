@@ -37,6 +37,13 @@
         "partner",
         "associate"
       ]
+    },
+    "Sex": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
     }
   }
 }

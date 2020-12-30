@@ -5,7 +5,7 @@
   "description": "A Strapi+Vuepress application",
   "scripts": {
     "buildFrontend": "npm i --prefix frontend && npm run build --prefix frontend",
-    "buildBackend": "npm i --prefix cms && npm run build --prefix cms && cp -a cms/public/. frontend/.vuepress/dist",
+    "buildBackend": "yarn --cwd cms install && yarn --cwd cms/plugins/strapi-plugin-content-export-import && yarn --cwd cms build",
     "build": "npm run buildFrontend && npm run buildBackend",
     "dev": "npm run dev --prefix cms & npm run deb --prefix frontend",
     "start": "npm run start  --prefix cms"

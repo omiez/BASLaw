@@ -2,7 +2,7 @@
   <div class="footer-wrapper">
     <span>
       <!-- <i class="iconfont reco-theme"></i> -->
-      <a target="blank" href="https://vuepress-theme-reco.recoluan.com">מיאה עזריאל שטרן</a>
+      <!-- <a target="blank" href="https://vuepress-theme-reco.recoluan.com">מיאה עזריאל שטרן</a> -->
     </span>
     <span v-if="$themeConfig.record">
       <i class="iconfont reco-beian"></i>
@@ -11,7 +11,8 @@
     <span>
       <!-- <i class="iconfont reco-copyright"></i> -->
       <a>
-        <span v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</span>
+<!--         <span v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</span> -->
+        <span>בנאי-עזריאל-שטרן</span>
         &nbsp;&nbsp;
         <span v-if="$themeConfig.startYear && $themeConfig.startYear != (new Date().getFullYear())">{{ $themeConfig.startYear }} - </span>
         {{ new Date().getFullYear() }}

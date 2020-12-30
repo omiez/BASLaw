@@ -1,0 +1,3 @@
+[submodule "cms/plugins/strapi-plugin-content-export-import"]
+	path = cms/plugins/strapi-plugin-content-export-import
+	url = https://github.com/lazurey/strapi-plugin-content-export-import.git

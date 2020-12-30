@@ -99,7 +99,7 @@ module.exports = {
           homeBlog: {
             article: 'כתבות',
             tag: 'תגיות',
-            category: 'תחומים'
+            category: 'תחומי המשרד'
           },
           pagation: {
             prev: 'הקודם',

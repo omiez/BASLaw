@@ -2,12 +2,12 @@
   <div
     class="abstract-item"
     >
-    <div>{{getTitleName(item.Title)}}</div>
+    <div>{{getTitleName(item)}}</div>
     <div class="title">
-      <span>עו״ד</span> <router-link :to="{ path: '/attorney/', query: { id: item.id }}">{{item.Title}}</router-link>
+      <router-link :to="{ path: '/attorney/', query: { id: item.id }}">{{item.Name}}, <span>עו״ד</span> </router-link>
     </div>
     <img v-if="item.Photo[0]" :src="baseUrl + item.Photo[0].url"/>
-    <div class="abstract" v-html="item.Summary"></div>
+    <!-- <div class="abstract" v-html="item.Summary"></div> -->
   </div>
 </template>
 
@@ -17,12 +17,12 @@ export default {
   // components: { PageInfo },
   props: ['item', 'currentPage', 'currentTag'],
   methods: {
-        getTitleName(title) {
-      switch (title) {
+        getTitleName(attorney) {
+      switch (attorney.Title) {
         case "namepartner":
-          return 'שותפה מייסדת';
+          return attorney.Sex === 'Female' ?  'שותפה מייסדת' : 'שותף מייסד';
         case "partner":
-          return 'שותפה';
+          return attorney.Sex === 'Female' ? 'שותפה' : 'שותף';
         default:
           return '';   
       }

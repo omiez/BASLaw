@@ -40,7 +40,12 @@
         </ModuleTransition>
       </div>
     </div>
+    <ModuleTransition delay="0.24">
+      <Content v-show="recoShowModule" class="home-center" custom/>
+    </ModuleTransition>
 
+
+    <h1 style="color: #31799a;display: inherit;text-align: center;font-size: 2.6rem;">בנאי עזריאל שטרן בתקשורת</h1>
     <ModuleTransition delay="0.16">
       <div v-show="recoShowModule" class="home-blog-wrapper">
         <div class="blog-list">
@@ -61,7 +66,7 @@
           <ul class="category-wrapper">
             <li class="category-item" v-for="(item, index) in this.$categories.list" :key="index">
               <router-link :to="item.path">
-                <span class="category-name">{{ item.name }}</span>
+                <span class="category-name">{{ item.name === 'commercial' ? 'עיסקי' : item.name }}</span>
                 <span class="post-num" :style="{ 'backgroundColor': getOneColor() }">{{ item.pages.length }}</span>
               </router-link>
             </li>
@@ -75,9 +80,6 @@
       </div>
     </ModuleTransition>
 
-    <ModuleTransition delay="0.24">
-      <Content v-show="recoShowModule" class="home-center" custom/>
-    </ModuleTransition>
     <AccessibilityToolbar/>
   </div>
 </template>

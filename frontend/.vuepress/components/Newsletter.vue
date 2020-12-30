@@ -1,7 +1,9 @@
 <template>
     <ModuleTransition delay="0.08">
-    <div  class="abstract-wrapper"> 
+      <div>
+        <h1>ניוזלטר</h1>
 
+    <div  class="abstract-wrapper"> 
 
     <div
     class="abstract-item"
@@ -17,6 +19,7 @@
         במטרה לעודד חזרת משקיעים לביצוע עסקאות נדל"ן בישראל, ועל מנת להגביר את הפעילות בתחום הנדל"ן אשר הואטה משמעותית בחודשים האחרונים בשל משבר הקורונה, אישרה הכנסת ביום 29.7.2020 את חוק התכנית לסיוע כלכלי (נגיף הקורונה החדש - מענק חד–פעמי) (הוראת שעה ותיקוני חקיקה), התש"ף-2020 (להלן: "החוק").
     </div>
     </div>
+  </div>
   </div>
     </ModuleTransition>
 </template>
@@ -56,6 +59,13 @@ export default {
 
 <style lang="stylus" scoped>
 @require '../../node_modules/vuepress-theme-reco/styles/mode.styl'
+
+h1
+  color: #31799a;
+  display: inherit;
+  text-align: center;
+  font-size: 2.6rem;
+
 .abstract-item
   position relative
   margin: 0 auto 20px;

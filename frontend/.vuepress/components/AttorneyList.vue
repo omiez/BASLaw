@@ -49,6 +49,7 @@ export default {
               Title
               Name
               Summary
+              Sex
               Photo(limit:1) {
                 url
               }
