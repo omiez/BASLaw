@@ -1,4 +1,4 @@
-<a href="http://peaceful-savannah-05454.herokuapp.com">![We(a)r](./frontend/.vuepress/public/logo.svg?sanitize=true "BAS")</a>
+<a href="http://peaceful-savannah-05454.herokuapp.com">![BASLaw](./frontend/.vuepress/public/logo.svg?sanitize=true "BAS")</a>
 
 This work is licensed under 
 
