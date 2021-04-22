@@ -17,9 +17,12 @@ module.exports = ({ env }) => ({
       options: {
         ssl: true,
          dialect: 'postgres',
-  dialectOptions: {
-    "ssl": {"require":true }
-  }
+         dialectOptions: {
+            "ssl": { 
+              "require" : true,
+              "rejectUnauthorized": false  
+            },
+        }
       },
     },
   },
