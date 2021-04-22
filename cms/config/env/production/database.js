@@ -15,12 +15,12 @@ module.exports = ({ env }) => ({
         password: config.password,
       },
       options: {
-        ssl: true,
+         ssl: true,
          dialect: 'postgres',
          dialectOptions: {
-            "ssl": { 
-              "require" : true,
-              "rejectUnauthorized": false  
+            ssl: { 
+              require : true,
+              rejectUnauthorized: false  
             },
         }
       },
