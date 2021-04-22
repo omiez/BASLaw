@@ -10,6 +10,10 @@
     "dev": "npm run dev --prefix cms & npm run deb --prefix frontend",
     "start": "npm run start  --prefix cms"
   },
+  "dependencies": {
+    "knex": "^0.95.1",
+    "pg": "^8.5.1",
+  },
   "cacheDirectories": [
     "frontend/node_modules",
     "cms/node_modules"
