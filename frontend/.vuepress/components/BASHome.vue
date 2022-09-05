@@ -20,7 +20,8 @@
             <!-- <img class="logo-big" src='/logo-big.svg'> -->
           <!-- :src="$withBase($frontmatter.heroImage)" -->
         <!-- </ModuleTransition> -->
-        <div class="caption" style="position: absolute;  right: 151px;  width: 53%; top: 0%; ">
+        <div class="caption" style="position: absolute;  right: 151px;  width: 53%;
+    top: 0%; ">
           <h2 style="line-height: 1; text-align: right; color: white; font-size: 40px;" 
           v-if="home" v-html="home.caption">
             אנו בבנאי עזריאל שטרן מחויבים לספק שירותים משפטיים באיכות הגבוהה ביותר. אנו מבינים שאת הצלחתנו אנו צריכים להרוויח כל יום מחדש ע"י שמירה על קשר חזק ורציף עם לקוחותינו.
